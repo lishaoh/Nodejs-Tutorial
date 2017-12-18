@@ -1,11 +1,30 @@
 const express = require('express');
 const hbs = require('hbs');
+const fs = require('fs');
+const path = require('path');
 
+const port = process.env.PORT || 3000;
 var app = express();
-
+app.set('views', path.join(__dirname, 'views'));
 hbs.registerPartials(__dirname + '/views/partials'); //获取views/partials下面的hbs文件
 app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/public')); //获取public下的静态文件
+app.use((req, res, next) => {
+  var now = new Date().toString();
+  var log = `${now}: ${req.method} ${req.url}`;
+  console.log(log);
+  fs.appendFile('server.log', log + '\n', (err) => {
+    if (err) {
+      console.log('Unable to append to server.log');
+    }
+  })
+  next();
+});
+
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// });
+
+app.use(express.static(__dirname + '/web-server/public')); //获取public下的静态文件
 
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear();
@@ -13,7 +32,7 @@ hbs.registerHelper('getCurrentYear', () => {
 
 hbs.registerHelper('screamIt', (text) => {
   return text.toUpperCase();
-})
+});
 
 app.get('/', (req, res) => {
   // res.send('<h1>Hello Express</h1>');
@@ -38,5 +57,5 @@ app.get('/bad', (req, res) => {
 })
 
 app.listen(3000, () => {
-  console.log('Server is up on port 3000');
+  console.log(`Server is up on port ${port}`);
 });
