@@ -6,7 +6,6 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 var app = express();
 
-
 app.set('views', path.join(__dirname, 'views'));
 hbs.registerPartials(__dirname + '/views/partials'); //获取views/partials下面的hbs文件
 app.set('view engine', 'hbs');
