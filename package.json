@@ -4,8 +4,9 @@
   "description": "node js demo",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node web-server/server.js"
+    "test": "mocha **/**/*.test.js",
+    "start": "node web-server/server.js",
+    "test-watch": "nodemon --exec 'npm test'"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
     "lodash": "^4.17.4",
     "request": "^2.73.0",
     "yargs": "^10.0.3"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1"
   }
 }
