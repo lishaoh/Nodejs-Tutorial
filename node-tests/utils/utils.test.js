@@ -1,9 +1,12 @@
 const expect = require('expect');
 const utils = require('./utils');
 
-it('should add two numbers', () => {
-  var res = utils.add(23, 4);
-  expect(res).toBe(27).toBeA('number');
+describe('Utils', () => {
+  describe('#add', () => {
+  it('should add two numbers', () => {
+    var res = utils.add(23, 4);
+    expect(res).toBe(27).toBeA('number');
+  });
 });
 
 it('should square a number', () => {
@@ -20,10 +23,11 @@ it('should set firstName and lastName', () => {
   expect(user).toInclude({
     firstName: 'Andrew',
     lastName: 'lsh'
+    });
   })
 });
 
-// it('should expect some values', () => {
+// it('should expect some values', () => {l
 //   // expect(12).toNotBe(12);
 //   // expect({name: 'Andrew'}).toNotEqual({name: 'Andrew'});
 //   // expect([2,3,4]).toExclude(1);

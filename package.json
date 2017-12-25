@@ -23,10 +23,21 @@
     "express": "^4.16.2",
     "hbs": "^4.0.1",
     "lodash": "^4.17.4",
+    "nvm": "0.0.4",
     "request": "^2.73.0",
     "yargs": "^10.0.3"
   },
   "devDependencies": {
-    "mocha": "^4.0.1"
+    "expect": "^1.20.2",
+    "mocha": "^4.0.1",
+    "rewire": "^3.0.2",
+    "supertest": "^3.0.0"
+  },
+  "consumedServices": {
+    "file-icons.element-icons": {
+      "versions": {
+        "1.0.0": "consumeElementIcons"
+      }
+    }
   }
 }
