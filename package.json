@@ -5,10 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start-mongodb": "node node-todo-api/server/server.js",
-    "test": "mocha **/**/*.test.js",
+    "test": "export NOOE_ENV=test || SET \"NOOE_ENV = test\" && mocha **/**/*.test.js",
     "start": "node web-server/server.js",
     "test-watch": "nodemon --exec 'npm test'",
-    "test-mongodb": "mocha **/**/**/*.test.js",
+    "test-mongodb": "export NOOE_ENV=test || SET \"NOOE_ENV = test\" && mocha **/**/**/*.test.js",
     "test-watch-mongodb": "nodemon --exec 'npm run test-mongodb'"
   },
   "repository": {
