@@ -8,7 +8,7 @@
     "test": "export NOOE_ENV=test || SET \"NOOE_ENV = test\" && mocha **/**/*.test.js",
     "start": "node web-server/server.js",
     "test-watch": "nodemon --exec 'npm test'",
-    "test-mongodb": "export NOOE_ENV=test || SET \"NOOE_ENV = test\" && mocha **/**/**/*.test.js",
+    "test-mongodb": "export NOOE_ENV=test || SET \"NOOE_ENV = test\" && mocha node-todo-api/server/tests/server.test.js",
     "test-watch-mongodb": "nodemon --exec 'npm run test-mongodb'"
   },
   "repository": {
@@ -42,7 +42,6 @@
   },
   "devDependencies": {
     "expect": "^1.20.2",
-    "mocha": "^4.0.1",
     "mongoose": "^5.1.1",
     "rewire": "^3.0.2",
     "supertest": "^3.0.0"
