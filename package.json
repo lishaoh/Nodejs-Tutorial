@@ -20,9 +20,12 @@
   "homepage": "https://github.com/Andrew-project/Nodejs-demo#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "moment": "^2.22.1",
     "socket.io": "^2.1.1"
   },
   "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.0.2",
     "nodemon": "^1.17.5"
   }
 }
