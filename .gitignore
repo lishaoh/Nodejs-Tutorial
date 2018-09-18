@@ -1,4 +1,0 @@
-.idea
-node_modules/
-.gitignore
-node-todo-api/server/config/config.json
